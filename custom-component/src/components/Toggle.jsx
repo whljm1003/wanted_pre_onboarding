@@ -31,7 +31,6 @@ const Circle = styled.div`
 
 function Toggle() {
   const [toggle, setToggle] = useState(false);
-
   const clickedToggle = () => {
     setToggle((prev) => !prev);
   };

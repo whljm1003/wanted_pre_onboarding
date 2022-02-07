@@ -43,15 +43,16 @@ const arr = ["Tab One", "Tab Two", "Tab Three"];
 
 function Tab() {
   const [tabNum, setTabNum] = useState(0);
-
   const CompoObj = {
     0: <Tab1 />,
     1: <Tab2 />,
     2: <Tab3 />,
   };
+
   const onClickedTab = (index) => {
     setTabNum(index);
   };
+
   return (
     <Wrapper>
       <Title>Tab</Title>
