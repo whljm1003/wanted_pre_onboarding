@@ -14,6 +14,9 @@ const Name = styled.span`
 `;
 const InputBox = styled.input`
   height: 30px;
+  border-radius: 8px;
+  padding-left: 5px;
+  border: 1px solid #2f3640;
 `;
 const Result = styled.div`
   font-weight: 600;

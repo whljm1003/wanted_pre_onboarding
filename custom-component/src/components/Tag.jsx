@@ -7,7 +7,8 @@ const TagContainer = styled.div`
   display: flex;
   align-items: center;
   border: 1px solid grey;
-  width: 80%;
+  border-radius: 12px;
+  width: 60vw;
   height: 60px;
 `;
 const Hash = styled.div`
@@ -39,6 +40,9 @@ const InputBox = styled.input`
   font-size: 32px;
   &:focus {
     outline: none;
+  }
+  @media screen and (max-width: 820px) {
+    font-size: 20px;
   }
 `;
 
