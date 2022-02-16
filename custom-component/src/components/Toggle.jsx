@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Title, Wrapper } from "./layout/layout";
 
 const ToggleBtn = styled.button`
@@ -23,10 +23,12 @@ const Circle = styled.div`
   position: absolute;
   left: 5%;
   transition: all 0.5s ease-in-out;
-  &.active {
-    transform: translate(80px, 0);
-    transition: all 0.5s ease-in-out;
-  }
+  ${(props) =>
+    props.toggle &&
+    css`
+      transform: translate(80px, 0);
+      transition: all 0.5s ease-in-out;
+    `}
 `;
 
 function Toggle() {
@@ -38,7 +40,7 @@ function Toggle() {
     <Wrapper>
       <Title>Toggle</Title>
       <ToggleBtn onClick={clickedToggle} toggle={toggle}>
-        <Circle className={toggle && "active"} />
+        <Circle toggle={toggle} />
       </ToggleBtn>
       <h3>Toggle Switch {!toggle ? "OFF" : "ON"}</h3>
     </Wrapper>

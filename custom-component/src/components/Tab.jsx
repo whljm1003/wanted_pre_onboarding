@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Title, Wrapper } from "./layout/layout";
 import Tab1 from "./Tab/Tab1";
 import Tab2 from "./Tab/Tab2";
@@ -26,12 +26,13 @@ const TabBtn = styled.li`
   text-align: center;
   padding-left: 10px;
   z-index: 1;
-
-  &.isActive {
-    color: ${(props) => props.theme.white.lighter};
-    background-color: ${(props) => props.theme.blue};
-    transition: all 0.2s ease;
-  }
+  ${(props) =>
+    props.selected &&
+    css`
+      color: ${(props) => props.theme.white.lighter};
+      background-color: ${(props) => props.theme.blue};
+      transition: all 0.2s ease;
+    `}
 `;
 const Contents = styled.div`
   width: 100%;
@@ -60,7 +61,7 @@ function Tab() {
         {arr.map((e, index) => (
           <TabBtn
             key={e}
-            className={tabNum === index && "isActive"}
+            selected={tabNum === index}
             onClick={(e) => onClickedTab(index)}
           >
             {e}

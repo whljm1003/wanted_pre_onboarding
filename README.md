@@ -24,6 +24,8 @@
 
   그래서 구글링과 여러 시도 끝에 클래스 네임을 주어 클릭 했을 시 className에 active(네임명)를 추가하여 애니메이션 효과를 주며 원을 이동시킬 수 있었습니다.
 
+  styled-components를 사용하기에 className 대신 props로 대체하였다.
+
 - 동작
 
   <img width="50%" src="https://user-images.githubusercontent.com/56882147/154031089-4a8c203a-7930-405b-9ce8-c9d8b2c85870.gif"/>
